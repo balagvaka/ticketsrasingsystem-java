@@ -1,0 +1,42 @@
+<p>update-ticket works!</p>
+<div style="width: 400px;">
+    <form (ngSubmit)="onsubmit()">
+      <div class="form-group">
+        <label for="name">ticket_id</label>
+        <input type="text" class="form-control" id="ticket_id" required [(ngModel)]="ticket.ticket_id" name="ticket_id">
+      </div>
+  
+      <div class="form-group">
+        <label for="name">raisedby</label>
+        <input type="text " class="form-control" id="raisedby" required [(ngModel)]="ticket.raisedby" name="raisedby"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="name">typeOfIssue</label>
+        <input type="text" class="form-control" id="typeOfIssue" required [(ngModel)]="ticket.typeOfIssue" name="typeOfIssue"/>
+      </div>
+      <div class="form-group">
+        <label for="name">raisedon</label>
+        <input type="text" class="form-control" id="raisedon" required [(ngModel)]="ticket.raisedon" name="raisedon"/>
+      </div>
+      <div class="form-group">
+        <label for="name">resolved</label>
+        <input type="text" class="form-control" id="resolved" required [(ngModel)]="ticket.resolved" name="resolved"/>
+      </div>
+
+      <div class="form-group">
+        <label for="name">resolvedby</label>
+        <input type="text" class="form-control" id="resolvedby" required [(ngModel)]="ticket.resolvedby" name="resolvedby"/>
+      </div>
+      <div class="form-group">
+        <label for="name">resolvedon</label>
+        <input type="text" class="form-control" id="resolvedon" required [(ngModel)]="ticket.resolvedon" name="resolvedon"/>
+      </div>
+
+      <div class="form-group">
+        <label for="name">priority</label>
+        <input type="text" class="form-control" id="priority" required [(ngModel)]="ticket.priority" name="priority"/>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>

@@ -1,0 +1,32 @@
+<p>ticket-details works!</p>
+<hr/>
+<div *ngIf="ticket">
+  <div>
+    <label><b>TICKET_ID: </b></label> {{ticket.ticket_id}}
+  </div>
+  <div>
+    <label><b>raisedby: </b></label> {{ticket.raisedby}}
+  </div>
+  <div>
+    <label><b>typeOfIssue: </b></label> {{ticket.typeOfIssue}}
+  </div>
+  <div>
+    <label><b>raisedon: </b></label> {{ticket.raisedon}}
+  </div>  
+  <div>
+    <label><b>resolved: </b></label> {{ticket.resolved}}
+  </div>
+  <div>
+    <label><b>resolvedby: </b></label> {{ticket.resolvedby}}
+  </div>
+  <div>
+    <label><b>resolvedon: </b></label> {{ticket.resolvedon}}
+  </div>
+  <div>
+    <label><b>priority: </b></label> {{ticket.priority}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to ticket List</button><br>

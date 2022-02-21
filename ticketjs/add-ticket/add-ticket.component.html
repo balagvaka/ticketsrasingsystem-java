@@ -1,0 +1,60 @@
+<p>add-ticket works!</p>
+<h3>Create Ticket</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Ticket_id</label><br>
+        <input type="text" class="form-control" id="ticket_id" required [(ngModel)]="ticket.ticket_id" name="ticket_id">
+      </div>
+  
+      <div class="form-group">
+        <label for="name">raisedby</label><br>
+        <input type="text" class="form-control" id="raisedby" required [(ngModel)]="ticket.raisedby" name="raisedby"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="name">typeOfIssue</label><br>
+        <input type="text" class="form-control" id="typeOfIssue " required [(ngModel)]="ticket.typeOfIssue" name="typeOfIssue"/>
+      </div>
+      
+      <div class="form-group">
+        <select type="text" class="form-control" id="raisedon" required [(ngModel)]="ticket.raisedon" name="raisedon">
+          <option>{{dateTime|date:'yyyy-MM-dd hh:mm:ss'}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="name">resolved</label><br>
+        <input type="text" class="form-control" id="resolved" required [(ngModel)]="ticket.resolved" name="resolved"/>
+      </div>
+
+      <div class="form-group">
+        <label for="name">resolvedby</label><br>
+        <input type="text" class="form-control" id="resolvedby" required [(ngModel)]="ticket.resolvedby" name="resolvedby"/>
+      </div>
+      <div class="form-group">
+        <label for="name">resolvedon</label><br>
+        <input type="text" class="form-control" id="resolvedon" required [(ngModel)]="ticket.resolvedon" name="resolvedon"/>
+      </div>
+
+      <div class="form-group">
+        <label for="name">priority</label><br>
+        <p>Please select your priority:</p>
+         <input type="radio" id="high" name="priority" value="high" required [(ngModel)]="ticket.priority"/>
+        <label for="high">high</label><br>
+        <input type="radio" id="medium" name="priority" value="medium" required [(ngModel)]="ticket.priority"/>
+        <label for="medium">medium</label><br>
+        <input type="radio" id="low" name="priority" value="low" required [(ngModel)]="ticket.priority"/>
+        <label for="low">low</label><br>
+             </div>
+
+     
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newTicket()">Add</button> -->
+</div>

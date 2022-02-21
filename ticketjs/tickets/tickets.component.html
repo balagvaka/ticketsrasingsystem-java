@@ -1,0 +1,52 @@
+<p>
+    get tickets work</p>
+<div class ="container">
+    <div class = "card">
+        <h3 class = "text-center">Users List</h3>
+        <div class = "card-body">
+            <table class = "table table-striped">
+                <thead>
+                    <th>ticket_id</th>
+                    <th>raisedby</th>
+                    <th>typeOfIssue</th>
+                    <th>raisedon</th>
+                    <th>resolved</th>
+                    <th>resolvedon</th>
+                    <th>resolvedby</th>
+                    <th>priority</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let user of Tickets|async">
+                        <td> {{user.ticket_id}} </td>
+                        <td> {{user.raisedby}} </td>
+                        <td> {{user.typeOfIssue}} </td>
+                        <td> {{user.raisedon}} </td>
+                        <td> {{user.resolved}} </td>
+                        <td> {{user.resolvedon}} </td>
+                        <td> {{user.resolvedby}} </td>
+                        <td> {{user.priority}} </td>
+                        <button (click)="deleteTicket(user.ticket_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>
+                        <button (click)="Ticketdetails(user.ticket_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Details</i></button>
+                        <button (click)="UpdateTicket(user.ticket_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Update </i></button>                        
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <button (click)="getTicketreport()"   class='btn btn-primary'><i class="fa fa-futboll-0">generatereport</i></button>
+    </div>
+    <div class="form-group">
+        <label for="name">raisedon</label>
+        <input type="text" class="form-control" id="raisedon2" required [(ngModel)]="raisedon2" name="raisedon2"/>
+      </div>
+      <div class="form-group">
+        <label for="name">raisedon1</label>
+        <input type="text" class="form-control" id="raisedon1" required [(ngModel)]="raisedon1" name="raisedon1"/>
+      </div>
+      <button (click)="getreportbetween(raisedon2,raisedon1)"   class='btn btn-primary'><i class="fa fa-futboll-0">generatereportbetween</i></button>
+</div>
+<div>
+    <label for="name">Departmnet Number:</label>
+    <input type="text" class="form-control" id="depnum" required [(ngModel)]="depnum" name="depnum" />
+</div>
+<button (click)="itnonitreport(depnum)" class='btn btn-primary'><i class="fa fa-futboll-0">IT-NON-IT Report </i></button>
